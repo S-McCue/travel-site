@@ -1,0 +1,98 @@
+.row {
+
+    &--t-padding {
+        padding-top: 80px;
+    }
+
+    &__b-margin-until-medium {
+        margin-bottom: 1rem;
+    }
+
+    @mixin atMedium {
+
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+
+        &--gutters {
+            column-gap: 5.3%;
+        }
+    
+        &--gutters-large {
+            column-gap: 8%;
+        }
+    
+        &--gutters-small {
+            column-gap: 3.6%;
+        }
+    
+        &__b-margin-until-medium {
+            margin-bottom: 0;
+        }
+
+        &__1-large,
+        &__2-large,
+        &__3-large,
+        &__4-large,
+        &__5-large,
+        &__6-large,
+        &__7-large,
+        &__8-large,
+        &__9-large,
+        &__10-large,
+        &__11-large,
+        &__12-large {
+            grid-column: span 12;
+        }
+
+        &__4-medium {
+            grid-column: span 4;
+        }
+    
+        &__medium-6 {
+            grid-column: span 6;
+        }
+
+        &__8-medium {
+            grid-column: span 8;
+        }
+    }
+
+    @mixin atLarge {
+
+        &__b-margin-until-large {
+            margin-bottom: 0;
+        }
+
+        &__4-large {
+            grid-column: span 4;
+        }
+    
+        &__large-6 {
+            grid-column: span 6;
+        }
+
+        &__8-large {
+            grid-column: span 8;
+        }
+    }
+
+    /* Begin equal height rules */
+    &--equal-height-at-medium {
+        @mixin atMedium {
+            display: flex;
+        }
+
+        & > div {
+            float: none;
+            display: flex;
+        }
+    }
+
+    &--equal-height-at-large {
+        @mixin atLarge {
+            & > div {
+                display: flex;
+            }
+        }
+    }
+}
